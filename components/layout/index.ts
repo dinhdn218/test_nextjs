@@ -1,2 +1,1 @@
-export * from './mainMedical';
-export * from './mainNoza';
+export * from './LayoutNoza';

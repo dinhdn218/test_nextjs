@@ -1,0 +1,39 @@
+@import '../../../styles/color.scss';
+
+.sidebar-tab {
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  &.user {
+    background-color: $user-color;
+    & .sidebar-tab-img {
+      width: 2.3rem !important;
+      height: 2.9rem !important;
+    }
+  }
+  &.matching {
+    background-color: $matching-color;
+    & .sidebar-tab-img {
+      width: 2.9rem !important;
+      height: 2.9rem !important;
+    }
+  }
+  &.video {
+    background-color: $video-color;
+    & .sidebar-tab-img {
+      width: 2.3rem !important;
+      height: 2.3rem !important;
+    }
+  }
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+  &-img {
+    min-width: unset !important;
+    min-height: unset !important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
+}
