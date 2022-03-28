@@ -4,46 +4,4 @@
   width: 23rem;
   height: 100vh;
   color: #ffffff;
-  &-top {
-    padding-left: 2rem;
-    height: 8.5rem;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-  }
-  &-body {
-    padding: 2rem 0;
-    height: calc(100% - 8.5rem);
-    background-color: $matching-color;
-    position: relative;
-    &.matching {
-      background-color: $matching-color;
-    }
-    &.user {
-      background-color: $user-color;
-    }
-    &.video {
-      background-color: $video-color;
-    }
-    &-triangle {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 14.7rem;
-      width: 1.6rem;
-      height: 2.6rem;
-      transform: translateY(-100%);
-      border-left: 0.8rem solid transparent;
-      border-right: 0.8rem solid transparent;
-      &.user {
-        border-bottom: 1.3rem solid $user-color;
-      }
-      &.matching {
-        border-bottom: 1.3rem solid $matching-color;
-      }
-      &.video {
-        border-bottom: 1.3rem solid $video-color;
-      }
-    }
-  }
 }

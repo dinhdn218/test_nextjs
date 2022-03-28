@@ -1,11 +1,14 @@
+import { BaseSyntheticEvent } from 'react';
+import { AdminSidebarMenuType } from '../../organisms/AdminSidebar';
+import { AdminSidebarItemType, AdminSidebarType } from '../../organisms/AdminSidebar/AdminSidebarType';
 import SidebarListView from './view';
 
 type Props = {
-  textContent: string;
+  menu: AdminSidebarMenuType
 };
 
-const SidebarList = ({ textContent }: Props): JSX.Element => {
-  return <SidebarListView textContent={textContent} />;
+const SidebarList = ({ menu }: Props): JSX.Element => {
+  return <SidebarListView  menu={menu}/>;
 };
 
 export default SidebarList;
