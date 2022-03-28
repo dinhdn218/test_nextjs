@@ -1,8 +1,13 @@
-import type { NextPage } from 'next';
-import { NozaLayout } from '../../components/layout';
+import { ReactElement } from 'react'
+import { NozaLayout } from '../../components/layout'
+import { NextPageWithLayout } from '../../components/layout/layoutPropsType'
 
-const Home: NextPage = () => {
-    return <div>web quan ly chung</div>;
-};
+const AdminHomePage: NextPageWithLayout = () => {
+  return <div>web quan ly chung</div>
+}
 
-export default Home;
+AdminHomePage.getLayout = function getLayout(page: ReactElement) {
+  return <NozaLayout>{page}</NozaLayout>
+}
+
+export default AdminHomePage

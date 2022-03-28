@@ -1,11 +1,8 @@
-import React from 'react';
-import { NextPage } from 'Next';
-import { MainLayout } from '../components/layout';
-import Link from 'next/link';
+import { NextPage } from 'Next'
+import Link from 'next/link'
+import React from 'react'
 
-type Props = {};
-
-const About: NextPage = (props: Props) => {
+const About: NextPage = () => {
   return (
     <div>
       <div className="about">about</div>
@@ -13,7 +10,7 @@ const About: NextPage = (props: Props) => {
         <a>Go to home page</a>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
