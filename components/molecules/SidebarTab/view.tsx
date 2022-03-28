@@ -1,18 +1,17 @@
-import React from 'react';
-import Image from 'next/image';
+import React, { BaseSyntheticEvent } from 'react'
+import Image from 'next/image'
 
 type Props = {
-  optionalClass: string;
-  handleClick: Function;
-  src: string;
-};
+  optionalClass: string
+  handleClick: (e: BaseSyntheticEvent) => void
+  src: string
+}
 
 const SidebarTabView: React.FC<Props> = ({
   handleClick,
   optionalClass,
   src,
 }: Props) => {
-  console.log(src);
   return (
     <div
       className={`sidebar-tab ${optionalClass}`}
@@ -26,7 +25,7 @@ const SidebarTabView: React.FC<Props> = ({
         alt="image"
       ></Image>
     </div>
-  );
-};
+  )
+}
 
-export default SidebarTabView;
+export default SidebarTabView
