@@ -1,1 +1,2 @@
-export * from './LayoutNoza';
+export * from './NozaLayout';
+export * from './HospitalLayout';
