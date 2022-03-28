@@ -1,14 +1,11 @@
-// import matchingImg from '/matching.png';
-// import userImg from '/user.png';
-// import videoImg from '/video.png';
-import { SidebarType } from './SidebarType';
+import { AdminSidebarType } from './AdminSidebarType'
 
-export const sidebar: SidebarType[] = [
+export const adminSidebar: AdminSidebarType[] = [
   {
     path: '/matching',
     optionalClass: 'matching',
     src: '/matching.png',
-    menuList: [
+    featureList: [
       { label: 'ダッシュボード', path: '/' },
       { label: '求人管理一覧', path: '/' },
     ],
@@ -17,7 +14,7 @@ export const sidebar: SidebarType[] = [
     path: '/video',
     optionalClass: 'video',
     src: '/video.png',
-    menuList: [
+    featureList: [
       { label: 'ダッシュボード', path: '/' },
       { label: '動画一覧', path: '/' },
       { label: '動画投稿', path: '/' },
@@ -29,7 +26,7 @@ export const sidebar: SidebarType[] = [
     path: '/user',
     optionalClass: 'user',
     src: '/user.png',
-    menuList: [
+    featureList: [
       { label: '歯科医院一覧', path: '/' },
       { label: '歯科医院新規作成', path: '/' },
       { label: '歯科衛生士・歯科助手一覧', path: '/' },
@@ -40,4 +37,4 @@ export const sidebar: SidebarType[] = [
       { label: '請求金額', path: '/' },
     ],
   },
-];
+]

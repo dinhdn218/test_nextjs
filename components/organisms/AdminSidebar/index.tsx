@@ -1,19 +1,19 @@
 import { BaseSyntheticEvent, useRef, useState } from 'react'
-import { SidebarItemType } from './SidebarType'
-import { sidebar } from './SidebarDefination'
-import SidebarView from './view'
+import { AdminSidebarItemType } from './AdminSidebarType'
+import { adminSidebar } from './AdminSidebarDefination'
+import AdminSidebarView from './view'
 
-export type SidebarMenuType = {
-  menuList: SidebarItemType[]
+export type AdminSidebarMenuType = {
+  featureList: AdminSidebarItemType[]
   optionalClass: string
 }
 
-const SideBar = (): JSX.Element => {
-  const [menu, setMenu] = useState<SidebarMenuType>(() => {
+const AdminSideBar = (): JSX.Element => {
+  const [menu, setMenu] = useState<AdminSidebarMenuType>(() => {
     // Khi login sẽ hiển thị tab quản lý user
-    const featureDefault = sidebar[sidebar.length - 1]
+    const featureDefault = adminSidebar[adminSidebar.length - 1]
     return {
-      menuList: featureDefault.menuList,
+      featureList: featureDefault.featureList,
       optionalClass: featureDefault.optionalClass,
     }
   })
@@ -24,7 +24,7 @@ const SideBar = (): JSX.Element => {
   const handleChangeMenu = (
     e: BaseSyntheticEvent,
     className: string,
-    menuList: SidebarItemType[]
+    featureList: AdminSidebarItemType[]
   ) => {
     const { x, width } = e.target.getBoundingClientRect()
     // Thay đổi tọa độ hình tam giác phần sidebar body mỗi lần click vào quản lý matching/user/video
@@ -34,14 +34,14 @@ const SideBar = (): JSX.Element => {
     }
     // Thay đổi lại menu và màu nền của sidebar
     setMenu({
-      menuList: menuList,
+      featureList: featureList,
       optionalClass: className,
     })
   }
 
   return (
-    <SidebarView
-      sidebar={sidebar}
+    <AdminSidebarView
+      adminSidebar={adminSidebar}
       handleChangeMenu={handleChangeMenu}
       menu={menu}
       triangleRef={triangleRef}
@@ -49,4 +49,4 @@ const SideBar = (): JSX.Element => {
   )
 }
 
-export default SideBar
+export default AdminSideBar

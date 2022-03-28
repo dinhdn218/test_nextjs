@@ -1,27 +1,27 @@
 import { BaseSyntheticEvent } from 'react'
-import { SidebarItemType } from '../../organisms/AdminSidebar/SidebarType'
+import { AdminSidebarItemType } from '../../organisms/AdminSidebar/AdminSidebarType'
 import SidebarTabView from './view'
 
 type Props = {
   path: string
   optionalClass: string
   src: string
-  menuList: object[]
+  featureList: AdminSidebarItemType[]
   onChangeMenu: (
     e: BaseSyntheticEvent,
     className: string,
-    menuList: SidebarItemType[]
+    featureList: AdminSidebarItemType[]
   ) => void
 }
 
 const SidebarTab = ({
   optionalClass,
   src,
-  menuList,
+  featureList,
   onChangeMenu,
 }: Props): JSX.Element => {
   const handleClick = (e: BaseSyntheticEvent) => {
-    onChangeMenu(e, optionalClass, menuList)
+    onChangeMenu(e, optionalClass, featureList)
   }
 
   return (

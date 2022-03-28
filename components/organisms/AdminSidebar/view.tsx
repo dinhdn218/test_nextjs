@@ -1,22 +1,22 @@
 import { BaseSyntheticEvent, LegacyRef } from 'react'
 import SidebarTab from '../../molecules/SidebarTab'
-import { SidebarItemType, SidebarType } from './SidebarType'
 import SidebarItem from '../../atoms/SidebarItem'
-import { SidebarMenuType } from '.'
+import { AdminSidebarItemType, AdminSidebarType } from './AdminSidebarType'
+import { AdminSidebarMenuType } from '.'
 
 type Props = {
-  sidebar: SidebarType[]
+  adminSidebar: AdminSidebarType[]
   handleChangeMenu: (
     e: BaseSyntheticEvent,
     className: string,
-    menuList: SidebarItemType[]
+    featureList: AdminSidebarItemType[]
   ) => void
-  menu: SidebarMenuType
+  menu: AdminSidebarMenuType
   triangleRef: LegacyRef<HTMLDivElement>
 }
 
-const SidebarView: React.FC<Props> = ({
-  sidebar,
+const AdminSidebarView: React.FC<Props> = ({
+  adminSidebar,
   handleChangeMenu,
   menu,
   triangleRef,
@@ -24,7 +24,7 @@ const SidebarView: React.FC<Props> = ({
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        {sidebar.map((item, index) => {
+        {adminSidebar.map((item, index) => {
           return (
             <SidebarTab
               onChangeMenu={handleChangeMenu}
@@ -32,15 +32,15 @@ const SidebarView: React.FC<Props> = ({
               path={item.path}
               src={item.src}
               optionalClass={item.optionalClass}
-              menuList={item.menuList}
+              featureList={item.featureList}
             />
           )
         })}
       </div>
       <div className={`sidebar-body ${menu.optionalClass}`}>
         {menu &&
-          menu.menuList.length > 0 &&
-          menu.menuList.map((menuItem, index) => {
+          menu.featureList.length > 0 &&
+          menu.featureList.map((menuItem, index) => {
             return <SidebarItem key={index} textContent={menuItem.label} />
           })}
         <div
@@ -52,4 +52,4 @@ const SidebarView: React.FC<Props> = ({
   )
 }
 
-export default SidebarView
+export default AdminSidebarView
